@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retrieve Files</title>
+<link rel="stylesheet" href="retrieve.css">
+</head>
+<body>
+ 
+<div class="container">
+<h1 class="glow-text">Retrieve Files</h1>
+<div id="file-list">
+<!-- Files will be loaded here dynamically -->
+</div>
+ 
+</div>
+ 
+<script>
+    // Simulated stored files
+    let files = JSON.parse(localStorage.getItem("uploadedFiles")) || [
+        "mazen.txt",
+        "logo.png",
+        "styles.css",
+        "logo.png"
+    ];
+ 
+    function loadFiles() {
+        let fileListDiv = document.getElementById("file-list");
+        fileListDiv.innerHTML = ""; // Clear previous content
+ 
+        files.forEach((file, index) => {
+            let fileItem = document.createElement("div");
+            fileItem.classList.add("file-item");
+            fileItem.innerHTML = `
+<span class="file-name">${file}</span>
+<button class="retrieve-btn" onclick="requestOTP('${file}')">Retrieve</button>
+            `;
+            fileListDiv.appendChild(fileItem);
+        });
+    }
+ 
+    function requestOTP(fileName) {
+        // Save the selected file name in localStorage
+        localStorage.setItem("fileToRetrieve", fileName);
+ 
+        // Redirect to OTP verification page
+        window.location.href = "otp.html";
+    }
+ 
+    window.onload = loadFiles;
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultShield Control Center</title>
+    <link rel="stylesheet" href="dashboard.css"> <!-- Separate CSS for Dashboard -->
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        <h1 class="glow-text">VaultShield Control Center</h1>
+        <h2 class="welcome-text">Welcome, Mazen</h2>
+
+        <div class="info-box">
+            <p>🔒 Encrypted Files: <strong>16</strong></p>
+        </div>
+
+        <div class="button-container">
+            <button class="glow-button" onclick="window.location.href='upload.html'">Upload File</button>
+            <button class="glow-button" onclick="window.location.href='retrieve.html'">Retrieve File</button>
+            <button class="logout-button" onclick="window.location.href='index.html'">Logout</button>
+        </div>
+    </div>
+</body>
+</html>

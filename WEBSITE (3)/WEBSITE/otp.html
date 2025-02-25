@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP</title>
+    <link rel="stylesheet" href="otp.css">
+    <script defer src="otp.js"></script>
+</head>
+<body>
+    <div class="otp-container">
+        <h1 class="glow-text">Enter OTP</h1>
+        <p>OTP sent to your registered email.</p>
+
+        <!-- OTP Input Field -->
+        <input type="text" id="otp-input" placeholder="Enter OTP" class="glow-input">
+        
+        <p id="otp-timer">OTP expires in: <span id="countdown">60</span> seconds</p>
+
+        <!-- Submit Button -->
+        <button class="glow-button" onclick="verifyOTP()">Submit</button>
+
+        <!-- Resend OTP (Hidden initially) -->
+        <button id="resend-btn" class="glow-button hidden" onclick="resendOTP()">Resend OTP</button>
+    </div>
+
+    <!-- ✅ Success Message Popup -->
+    <div id="otp-success-popup" class="popup-container hidden">
+        <div class="popup-box">
+            <h2 class="popup-title">✅ OTP Verified!</h2>
+            <p>Your file is now downloading...</p>
+            <button class="glow-button" onclick="returnToHome()">Return to Home</button>
+        </div>
+    </div>
+</body>
+</html>

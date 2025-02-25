@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: white;
+    background: black;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 600px; /* Prevents it from being too wide */
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.8);
+}
+
+/* Glowing Text */
+.glow-text {
+    font-size: 2.5rem;
+    text-shadow: 0px 0px 15px #00ffcc, 0px 0px 30px #00ffcc;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 30px;
+}
+
+/* Glowing Buttons */
+.glow-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 50px;
+    color: white;
+    background: rgba(0, 255, 170, 0.5);
+    border: 2px solid #00ffcc;
+    border-radius: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px #00ffcc;
+}
+
+/* Hover Effect */
+.glow-button:hover {
+    background: #00ffcc;
+    color: black;
+    box-shadow: 0px 0px 20px #00ffcc;
+    transform: scale(1.1);
+}
+
+/* Click Effect */
+.glow-button:active {
+    transform: scale(0.95);
+}
+
+/* Floating Logo Animation */
+.floating {
+    animation: float 4s infinite ease-in-out;
+}
+
+/* Floating Effect */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between input fields */
+    margin-top: 20px;
+}
+
+/* Glowing Input Fields */
+.glow-input {
+    width: 80%;
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+/* Input Glow Effect on Focus */
+.glow-input:focus {
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+/* Form Container for Signup Page */
+.form-container {
+    max-width: 500px;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.8);
+} 

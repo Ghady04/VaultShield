@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="upload.css"> <!-- Link to CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="glow-text">Upload Your File</h1>
+
+        <!-- Hidden file input -->
+        <input type="file" id="fileInput" hidden>
+
+        <!-- Upload Button -->
+        <button class="upload-button" onclick="document.getElementById('fileInput').click();">
+            UPLOAD FILE
+        </button>
+
+        <!-- Loading Animation (Initially Hidden) -->
+        <div id="loadingScreen" class="loading-container" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Uploading File...</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("fileInput").addEventListener("change", function(event) {
+            let file = event.target.files[0];
+            if (file) {
+                // Show loading screen
+                document.querySelector(".upload-button").style.display = "none";
+                document.getElementById("loadingScreen").style.display = "block";
+
+                // Simulate file upload delay
+                setTimeout(() => {
+                    saveFileToLocalStorage(file.name);
+                    window.location.href = "upload_success.html";
+                }, 2000); // Simulate upload time
+            }
+        });
+
+        function saveFileToLocalStorage(filename) {
+            let files = JSON.parse(localStorage.getItem("uploadedFiles")) || [];
+            files.push(filename);
+            localStorage.setItem("uploadedFiles", JSON.stringify(files));
+        }
+    </script>
+
+</body>
+</html>

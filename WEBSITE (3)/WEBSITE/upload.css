@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: white;
+    background: black;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    width: 70%;
+    max-width: 600px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.8);
+}
+
+/* Glowing Title */
+.glow-text {
+    font-size: 2rem;
+    text-shadow: 0px 0px 15px #00ffcc, 0px 0px 30px #00ffcc;
+}
+
+/* Upload Button */
+.upload-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 50px;
+    color: white;
+    background: rgba(0, 255, 170, 0.5);
+    border: 2px solid #00ffcc;
+    border-radius: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px #00ffcc;
+    margin-top: 20px;
+}
+
+/* Hover Effect */
+.upload-button:hover {
+    background: #00ffcc;
+    color: black;
+    box-shadow: 0px 0px 20px #00ffcc;
+    transform: scale(1.1);
+}
+
+/* Loading Screen */
+.loading-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 255, 170, 0.5);
+    border-top: 5px solid #00ffcc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Loading Text */
+.loading-text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #00ffcc;
+}

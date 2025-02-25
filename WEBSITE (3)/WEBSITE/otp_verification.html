@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP</title>
+    <link rel="stylesheet" href="otp.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="glow-text">Enter OTP</h1>
+        <p class="otp-text">OTP sent to your registered email.</p>
+
+        <input type="text" id="otpInput" class="glow-input" placeholder="Enter OTP">
+        <p id="timer" class="timer-text">OTP expires in: <span id="countdown">60</span> seconds</p>
+
+        <div class="button-container">
+            <button class="glow-button" onclick="verifyOTP()">SUBMIT</button>
+            <button id="resendOTP" class="glow-button resend-button" onclick="resendOTP()" style="display: none;">RESEND OTP</button>
+        </div>
+    </div>
+
+    <script>
+        let otp = Math.floor(100000 + Math.random() * 900000); // Generate 6-digit OTP
+        console.log("OTP:", otp); // Debugging (Remove in production)
+
+        let timeLeft = 60;
+        let timer = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                document.getElementById("timer").style.display = "none";
+                document.getElementById("resendOTP").style.display = "block";
+            } else {
+                document.getElementById("countdown").textContent = timeLeft;
+                timeLeft--;
+            }
+        }, 1000);
+
+        function verifyOTP() {
+            let enteredOTP = document.getElementById("otpInput").value;
+            if (enteredOTP == otp) {
+                alert("OTP Verified! Downloading File...");
+                window.location.href = "download_success.html"; // Redirect to download success page
+            } else {
+                alert("Invalid OTP! Try again.");
+            }
+        }
+
+        function resendOTP() {
+            location.reload(); // Reload page to get new OTP
+        }
+    </script>
+
+</body>
+</html>
